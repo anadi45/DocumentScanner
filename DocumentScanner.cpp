@@ -13,6 +13,7 @@ float w = 420, h = 596;
 
 Mat preProcessing(Mat img)
 {
+	cvtColor(img, imgGray, COLOR_BGR2GRAY);
 	GaussianBlur(img, imgBlur, Size(5, 5),7,0);
 	Canny(imgBlur, imgCanny, 25,50);
 
@@ -105,9 +106,6 @@ int main()
 	img = imread(path);
 
 	resize(img, img, Size(1000, 700));
-
-	cvtColor(img, imgGray,COLOR_BGR2GRAY);
-
 	//Preprocessing of image
 	imgThres=preProcessing(img);
 
@@ -128,7 +126,7 @@ int main()
 	imshow("Image", img);
 	imshow("Final Image", imgCrop);
 	//imshow("Grayscale Image", imgGray);
-	//imshow("Processed Image", imgThres);;
+	//imshow("Processed Image", imgThres);
 	
 	waitKey(0);
 	return 0;
