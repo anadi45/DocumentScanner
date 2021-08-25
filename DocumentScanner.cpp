@@ -103,6 +103,8 @@ Mat getWarp(Mat img, vector<Point>points, float w, float h)
 int main()
 {
 	string path = "Resources/paper.jpg";
+	string save = "Resources/Saves/save.jpg";
+
 	img = imread(path);
 
 	resize(img, img, Size(1000, 700));
@@ -127,6 +129,7 @@ int main()
 	imshow("Final Image", imgCrop);
 	//imshow("Grayscale Image", imgGray);
 	//imshow("Processed Image", imgThres);
+	imwrite(save, imgCrop);
 	
 	waitKey(0);
 	return 0;
