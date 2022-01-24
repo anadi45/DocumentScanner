@@ -1,4 +1,4 @@
-# DocumentScanner
+#### DocumentScanner
 <strong>C++ project to scan a document from given image and save the top view of the document to a new destination.
 
   Uses concepts like-<br>
